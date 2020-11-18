@@ -1,35 +1,19 @@
-"use strict";
+let numberOfFilms = +prompt('Сколько фильмов вы уже посматрели?', '');
 
-//let result = confirm('Are you here?');
-//console.log(result);
+let personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: {},
+    privat: false,
+};
 
-// let answer = prompt("Вам есть 18", "");
-// console.log(typeof answer);
+let a = prompt('Один из последних просмотренних фильмов?', '');
+let b = prompt('На сколько оцените его?', '');
+let c = prompt('Один из последних просмотренних фильмов?', '');
+let d = prompt('На сколько оцените его?', '');
 
-// let answers = [];
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
 
-// answers[0] = prompt('Как ваше имя?', '');
-// answers[1] = prompt('Как ваше фамилия?', '');
-// answers[2] = prompt('Сколько вам лет?', '');
-
-// let category = 'toys';
-// console.log(`https://someurl.com/${category}/5`);
-
-// let user = 'Ivan';
-// alert(`Привет, ${user}`);
-
- let inc = 10;
- let decr = 10;
-
- console.log(inc++);
- console.log(--decr);
-
- let isChecked = true;
- let isClose = true;
-
- console.log(isChecked && isClose);  //  логическое и 
-
- console.log(isChecked || isClose);  // логическое или
-
-// == логическое сравнение
-// !=  не равно
+console.log(personalMovieDB);
