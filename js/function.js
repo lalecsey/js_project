@@ -22,4 +22,6 @@ let logger = function() {
 
 logger();
 
-let calc = (a, b) => { return a + b };
+const calcStr = (a, b) => { return a + b };
+
+console.log(calcStr(5, 8));
