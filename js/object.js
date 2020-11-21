@@ -7,6 +7,9 @@ let options = {
     colors: {
         border: 'black',
         bg: 'red',
+    },
+    makeTest: function() {
+        console.log('Hello');
     }
 };
 
@@ -32,5 +35,7 @@ for (let key in options) {
 console.log(counter);
 console.log(Object.keys(options).length);
 
+options.makeTest();
 
-
+let {border, bg} = options.colors;
+console.log(border);
