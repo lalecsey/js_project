@@ -32,4 +32,6 @@ let toFalse = [0, '', null, undefined, NaN];
 console.log(Boolean('4'));
 console.log(!!'4'); // два знака отрицания
 
-[] + false - null + true;
+[] + false - null + true; // null 
+// и спотыкается о лож (null and false)
+// или спотыкается о правда('str' and true)
