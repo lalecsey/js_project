@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            }
+            .wrapper {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            border: 3px solid red;
+            }
+            button {
+            margin-bottom: 10px;
+            margin-top: 10px;
+            width: 100px;
+            height: 40px;
+            background-color: yellow;
+            border: none;
+            }
+    </style>
+</head>
+<body>
+    <button class="btn">Animation</button>
+    <div class="wrapper">
+        <div class="box"></div>
+    </div>
+
+    <script>
+        const btn = document.querySelector('.btn');
+        let timeId,
+            i = 0;
+        
+        function myAnimation() {
+            let elem = document.querySelector('.box');
+            let pos = 0;
+
+            const id = setInterval(frame, 10);
+            function frame() {
+                if (pos == 300) {
+                    clearInterval(id);
+                } else {
+                    pos++;
+                    elem.style.top = pos + 'px';
+                    elem.style.left = pos + 'px';
+                }
+            }
+        }
+
+        btn.addEventListener('click', myAnimation);
+
+        // btn.addEventListener('click', () => {
+        //     //const timeId = setTimeout(logger, 2000);
+        //     timeId = setInterval(logger, 2000);
+        // });
+
+        // // let timeIdOld = setTimeout(function () {
+        // //     console.log('hello');
+        // // }, 2000);
+
+        // // let timeIdFirst = setTimeout(function (text) {
+        // //     console.log(text);
+        // // }, 2000, 'hello');
+
+        // function logger () {
+        //     if (i === 3) {
+        //     console.log('text');
+        //     i++;
+        //     }
+        // }
+
+        // let timeIdSecond = setTimeout(logger, 2000);
+
+        // clearInterval(timeId);
+
+        // let id = setTimeout(function log() {
+        //     console.log('Hello');
+        //     id = setTimeout(log, 500);
+        // }, 500);
+
+
+    </script>
+</body>
+</html>
