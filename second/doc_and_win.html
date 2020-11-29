@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <style>
+        .box {
+            box-sizing: border-box;
+            width: 400px;
+            height: 350px;
+            overflow: scroll;
+            margin: 0 auto;
+            margin-top: 50;
+            padding: 10px;
+        };
+        button {
+            width: 100px;
+            height: 40px;
+            display: block;
+            margin: 0 auto;
+            margin-top: 20px;
+        }; 
+    </style>
+
+</head>
+<body>
+
+    <div class="box">
+        <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur velit eum deleniti laborum, perferendis et nobis, totam error est quam magni nostrum labore. Quae soluta praesentium ex iure distinctio, nesciunt quos nam odio, incidunt illo optio dicta dolor? Quod rem est odio reiciendis consequatur vero, deleniti dolorem laborum ratione alias quisquam cumque similique mollitia cum cupiditate voluptates assumenda tempora quas! Hic nobis, enim excepturi sequi accusamus ipsam veniam animi modi architecto expedita fuga magnam aperiam natus maiores sunt odit vel est dicta, consequuntur voluptates eos reprehenderit quos. Labore facere quos nobis in cupiditate, tempore commodi ipsum maiores cumque provident recusandae delectus? Sed, architecto laborum aliquid accusamus ad optio ratione quae cupiditate adipisci, aut obcaecati dolorem voluptatibus quas. Qui itaque totam ullam ducimus! Nam nobis veritatis molestiae necessitatibus commodi! Veritatis laboriosam ex, corporis ullam distinctio non maxime voluptatum voluptas repellendus aliquid cupiditate sed nesciunt molestiae iste iusto dolorem dolore deleniti autem? </p> 
+        <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur velit eum deleniti laborum, perferendis et nobis, totam error est quam magni nostrum labore. Quae soluta praesentium ex iure distinctio, nesciunt quos nam odio, incidunt illo optio dicta dolor? Quod rem est odio reiciendis consequatur vero, deleniti dolorem laborum ratione alias quisquam cumque similique mollitia cum cupiditate voluptates assumenda tempora quas! Hic nobis, enim excepturi sequi accusamus ipsam veniam animi modi architecto expedita fuga magnam aperiam natus maiores sunt odit vel est dicta, consequuntur voluptates eos reprehenderit quos. Labore facere quos nobis in cupiditate, tempore commodi ipsum maiores cumque provident recusandae delectus? Sed, architecto laborum aliquid accusamus ad optio ratione quae cupiditate adipisci, aut obcaecati dolorem voluptatibus quas. Qui itaque totam ullam ducimus! Nam nobis veritatis molestiae necessitatibus commodi! Veritatis laboriosam ex, corporis ullam distinctio non maxime voluptatum voluptas repellendus aliquid cupiditate sed nesciunt molestiae iste iusto dolorem dolore deleniti autem? </p> 
+    </div>
+    <button>Click</button>
+    <script>
+        const box = document.querySelector('.box');
+        const btn = document.querySelector('button');
+
+        // const width = box.clientWidth;
+        // const height = box.clientHeight;
+        // const width = box.offsetWidth;
+        // const height = box.offsetHeight;
+        const width = box.scrollWidth;
+        const height = box.scrollHeight;
+
+        console.log(width, height);
+
+        btn.addEventListener('click', () => {
+            // box.style.height = box.scrollHeight + 'px';
+            console.log(box.scrollTop);
+        });
+
+        console.log(box.getBoundingClientRect());
+
+        const style = window.getComputedStyle(box);
+        console.log(style.display);
+
+        console.log(document.documentElement.clientHeight);
+        console.log(window.scrollTo(0, 400));  // scrollBy
+    </script>
+</body>
+</html>
