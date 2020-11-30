@@ -90,4 +90,32 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     setClock('.timer', deadline);
+
+    // Modal
+
+    const modalTrigger = document.querySelectorAll('[data-modal]'),
+          modal = document.querySelector('.modal'),
+          modalClose = document.querySelector('[data-close');
+
+    modalTrigger.forEach(btn => {
+        btn.addEventListener('click', () => {
+        modal.classList.add('show');
+        modal.classList.remove('hide');
+        document.body.style.overflow = 'hidden';
+        });
+    });
+
+
+    function closeModal() {
+        modal.classList.add('hide');
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+    modalClose.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (event) => {
+        if (event.target == modal) {
+            closeModal();
+        }
+    });
 });
