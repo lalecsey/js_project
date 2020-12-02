@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THis</title>
+    <style>
+        button {
+            width: 100px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <button></button>
+
+    <script>
+        // function showThis(a, b) {
+        //     console.log(this);
+        //     function sum() {
+        //         console.log(this);
+        //         return a + b
+        //     }
+
+        //     console.log(sum());
+        // }
+        // showThis(4, 5);
+
+        // const obj = {
+        //     a: 20,
+        //     b: 25,
+        //     sum: function () {
+        //         console.log(this);
+        //         function shout() {
+        //             console.log(this);
+        //         }
+        //         shout();
+        //     }
+        // };
+        // obj.sum();
+
+        // function User(name, id) {
+        //     this.name = name;
+        //     this.id = id;
+        //     this.human = true;
+        // }
+
+        // let ivan = new User('Ivan', 23);
+
+        // function syaName(surname) {
+        //     console.log(this);
+        //     console.log(this.name + surname);
+        // }
+
+        // const user = {
+        //     name: 'John',
+        // };
+
+        // syaName.call(user, ' Smith');
+        // syaName.apply(user, [' Smith']);
+
+        // function count(num) {
+        //     return this*num;
+        // }
+
+        // const double = count.bind(2);
+        // console.log(double(3));
+        // console.log(double(13));
+
+
+
+        // 1 Обычная функция this = window, но если use strict - undefined
+        // 2 Контекст у методов объекта = сам объект
+        // 3 this в конструкторе и классах - это новый экземпляр объекта
+        // 4 Ручная привязка this: call, apple, bind
+
+        const btn = document.querySelector('button');
+
+        btn.addEventListener('click', function() {
+            console.log(this);
+            this.style.backgroundColor = 'red';
+        });
+
+        const objNew = {
+            num: 5,
+            sayNumber: function() {
+                const say = () => {
+                    console.log(this);
+                };
+
+                say();
+            }
+        };
+
+        objNew.sayNumber();
+
+        const double = a => a * 2;
+        console.log(double(4));
+
+    </script>
+</body>
+</html>
